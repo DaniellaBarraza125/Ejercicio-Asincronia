@@ -121,12 +121,15 @@ axios.get("https://dog.ceo/api/breed/hound/afghan/images")
 .then((allrandom)=> todos = allrandom.data.message)
 .catch((allrandom)=> console.error (allrandom.message));
 
+//preguntar porque con create.element parece funcionar sin meter la promesa dentro de la funcion. 
 function cargarMuchos() {
     muchos.innerHTML = ""; 
-todos.forEach(url => {
+
+todos.forEach(url => { console.log("Lista", url);
     const img = document.createElement("img");
     img.src = url;
     img.alt = "Perrito al azar";   
     muchos.appendChild(img); 
 });
 }
+
